@@ -18,7 +18,7 @@ RUN go build -o /tmp/myapp \
         -ldflags="-linkmode 'external' -extldflags '-static'" --buildvcs=0 \
   && go version /tmp/myapp
 
-FROM ${BASE_FINAL_IMAGE}
+
 WORKDIR /app/
 RUN apk --no-cache add curl lsof ca-certificates \
   && adduser -D nonpriv # create user and group
